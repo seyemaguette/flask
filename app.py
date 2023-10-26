@@ -91,15 +91,15 @@ def delete(id):
     return render_template('index.html',depenseDetails=depenseDetails,  revenuDetails=revenuDetails,depense=depense, revenu=revenu, solde=solde)
 
 
-@app.route("/update/<int:titre>", methods=['GET','POST'])
+@app.route("/update/<int:id>", methods=['GET','POST'])
 def update(id):
     cursor = mysql.connection.cursor()
-    cursor.execute("SELECT * FROM depense WHERE titre=%s",(id,))
-    updateDepense=cursor.fetch()
+    cursor.execute("SELECT * FROM depense WHERE id=%s",(id,))
+    updateDepense=cursor.fetchone()
     if request.method == "POST":
         titre=request.form['titre']
         montant=request.form['montant']
-        query="UPDATE depense SET titre=%s,montant=%s WHERE titre=%s "
+        query="UPDATE depense SET titre=%s,montant=%s WHERE id=%s "
         values=(titre,montant,id,)
         cursor.execute(query,values)
         mysql.connection.commit()

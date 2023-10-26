@@ -8,77 +8,76 @@
   </head>
   <body class=" bg-light ">
     <!------------------------------image du haut -------------------------->
-    <!-- <section class=" d-flex justify-content-center">
-        <img class="img img " src="{{url_for('static', filename='logo.png')}}" alt="">
-    </section> -->
+    <section class=" d-flex justify-content-center">
+        <img style="height: 100px; width:200px " class="img rounded-circle  " src="{{url_for('static', filename='logo.png')}}" alt="">
+    </section>
     <!-----------------------tableau du budget,depense et salaire ----------------------------------->
    <section>
-    <div class="container m-5 ">
-        <div class="row text-center text-white ">
+    <div class="container  ">
+        <div class="row   text-center text-white "style="height: 30px; display:flex ;justify-content:center ">
 
-           <label class="col mx-5 px-0 border bg-success " for="">Budget</label>
-           <label class="col mx-5 px-0 border bg-success " for="">Depense</label>
-           <label class="col mx-5 px-0 border bg-success " for="">Solde</label>
+           <label class="col-4 px-0 border bg-success " for="">Budget</label>
+           <label class="col-4 px-0 border bg-success " for="">Depense</label>
+           <label class="col-4 px-0 border bg-success " for="">Solde</label>
     
         </div>
-        <div class="row text-center ">
+        <div class="row row text-center "style="height: 30px; display:flex ;justify-content:center">
          
-          <label class="col mx-5 px-0 border  " for="">{{revenu}}F CFA</label>
-          <label class="col mx-5 px-0 border  " for="">{{depense}}F CFA </label>
-          <label class="col mx-5 px-0 border  " for="">{{solde}}F CFA</label>
+          <label class="col-4 px-0 border border-success " for="">{{revenu}}F CFA</label>
+          <label class="col-4 px-0 border border-success " for="">{{depense}}F CFA </label>
+          <label class="col-4 px-0 border border-success " for="">{{solde}}F CFA</label>
         </div>
        
     </div>
-   </section>
+   </section >
    <!------------------- ---------------------------------------titre,montant et action ---------------------------------------------->
-   <section>
-    <div class="m-5 text-center">
-        <p class="text-warning ">liste des depenses</p>
-        <div class="row text-center text-white ">
+   <section style="margin-bottom: 100px;">
+    <div class=" text-center">
+        <p style="font-size: 40px;color:lightslategrey;" >liste des depenses</p>
+        <div class="row text-center text-white " style="height: 30px;display:flex ;justify-content:center ">
 
-            <label class="col-4  border bg-success " for="title">Titre</label>
-            <label class="col-4  border bg-success " for="amount">Montant</label>
-            <label class="col-3  border bg-success " >Action</label>
+            <label class="col-3 border border-success bg-success  " for="title">Titre</label>
+            <label class="col-4  border border-success bg-success " for="amount">Montant</label>
+            <label class="col-3 border border-success bg-success " >Action</label>
      
          </div>
-         <div class="row text-center  ">
+         <div class="row text-center " style="height: 30px;display:flex ;justify-content:center; ">
                 {% for depense in depenseDetails%}
-             <label class="col-4  border ">{{depense[0]}}</label>
-             <label class="col-4  border  me-5">{{depense[1]}}F CFA </label>
-             <a class="col-1 btn border btn-light me-5 shadow" href="/update/{{depense[2]}}">modifier</a>
-             <a class="col-1 btn border btn-danger shadow" href="/delete/{{depense[2]}}">supprimer</a>
+             <label class="col-3  border border-success text-nowrap ">{{depense[0]}}</label>
+             <label class="col-3  border border-success text-nowrap ">{{depense[1]}}F CFA </label>
+             <a class="col-2 btn border border-success btn-danger shadow " href="/delete/{{depense[2]}}">supprimer</a>
+             <a class="col-2 btn border border-success btn-light  shadow  " href="/update/{{depense[2]}}">modifier</a>
 
                 {% endfor%}
-            </div>
-            <div class="row text-center ">
-             <a  class="col-2 btn border btn-light text-success "  href="/depense" >ajouter une depense</a>
-            </div>
+              
+                <a  class="col-2 btn text-nowrap border border-success btn-light text-success w-25 "   href="/depense" >ajouter une depense</a>
+              </div>
         
          
         </div>
        </div>
+       </section>
    <!------------------- ---------------------------------------titre,montant et action ---------------------------------------------->
    <section>
-    <div class="m-5 text-center">
-        <p class="text-warning ">liste des depenses</p>
-        <div class="row text-center text-white ">
+    <div class="text-center m-4">
+        <p style="font-size: 40px;color:lightslategrey">liste des depenses</p>
+        <div class="row text-center text-white "style="height: 30px;display:flex ;justify-content:center">
 
-            <label class="col-4  border bg-success " for="title">Titre</label>
-            <label class="col-4  border bg-success " for="amount">Montant</label>
-            <label class="col-3  border bg-success " >Action</label>
+            <label class="col-4  border border-success bg-success " for="title">Titre</label>
+            <label class="col-4  border border-success bg-success " for="amount">Montant</label>
+            <label class="col-3  border border-success bg-success " >Action</label>
      
          </div>
-         <div class="row text-center  ">
+         <div class="row text-center  "style="height: 30px;display:flex ;justify-content:center">
             
                 {% for revenu in revenuDetails%}
-             <label class="col-4  border ">{{revenu[0]}}</label>
-             <label class="col-4  border  me-5">{{revenu[1]}}F CFA </label>
-             <a class="col-1 btn border btn-danger shadow ms-5" href="/delete/{{revenu[2]}}">supprimer</a>
+             <label class="col-4 border border-success text-nowrap">{{revenu[0]}}</label>
+             <label class="col-4  border border-success text-nowrap">{{revenu[1]}}F CFA </label>
+             <a class="col-3 btn border border-success btn-danger shadow " href="/delete/{{revenu[2]}}">supprimer</a>
 
                 {% endfor%}
-            </div>
-            <div class="row text-center ">
-             <a  class="col-2 btn border btn-light text-success  "  href="/revenu" >ajouter un revenu</a>
+           
+             <a  class="col-2 btn text-nowrap border border-success btn-light text-success  "  href="/revenu" >ajouter un revenu</a>
             </div>
 
          

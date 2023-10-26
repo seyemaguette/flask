@@ -11,13 +11,13 @@
 <body>
  
 
-  <form class="container d-flex-inline w-50 h-100 mt-5  " method="POST" action="/update/{{depense[0]}}">
+  <form class="container d-flex-inline w-50 h-100 mt-5  " method="POST" action="/update/{{depense[2]}}">
     <label class="text-center text-success pb-5">modifier le depense</label>
     <label class="row w-25 text-success" for=""> Titre</label>
     <input class="row  mb-4 w-100 " type="text" name="titre" value="{{depense[0]}}"/>
     <label class="row   w-25 text-success " for="">Montant</label>
     <input class="row  mb-4 w-100 " type="text" name="montant" value="{{depense[1]}}" />
-    <input class="bg-success shadow  "  type="submit">
+    <input class="bg-success shadow  "  type="submit" value="modifier">
   </form>
   
     <script src="{{url_for('static', filename='bootstrap-5.3.2/dist/js/bootstrap.js')}}"></script>
