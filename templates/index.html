@@ -12,7 +12,7 @@
         <img style="height: 100px; width:200px " class="img rounded-circle  " src="{{url_for('static', filename='logo.png')}}" alt="">
     </section>
     <!-----------------------tableau du budget,depense et salaire ----------------------------------->
-   <section>
+   <section style="margin-bottom: 50px;" >
     <div class="container  ">
         <div class="row   text-center text-white "style="height: 30px; display:flex ;justify-content:center ">
 
@@ -32,8 +32,8 @@
    </section >
    <!------------------- ---------------------------------------titre,montant et action ---------------------------------------------->
    <section style="margin-bottom: 100px;">
-    <div class=" text-center">
-        <p style="font-size: 40px;color:lightslategrey;" >liste des depenses</p>
+    <div class="">
+        <p style="font-size: 30px;color:lightslategrey;margin-left:60px" >liste des depenses</p>
         <div class="row text-center text-white " style="height: 30px;display:flex ;justify-content:center ">
 
             <label class="col-3 border border-success bg-success  " for="title">Titre</label>
@@ -41,7 +41,7 @@
             <label class="col-3 border border-success bg-success " >Action</label>
      
          </div>
-         <div class="row text-center " style="height: 30px;display:flex ;justify-content:center; ">
+         <div class="row text-center " style="height: 30px;display:flex ;justify-content:center;">
                 {% for depense in depenseDetails%}
              <label class="col-3  border border-success text-nowrap ">{{depense[0]}}</label>
              <label class="col-3  border border-success text-nowrap ">{{depense[1]}}F CFA </label>
@@ -59,8 +59,8 @@
        </section>
    <!------------------- ---------------------------------------titre,montant et action ---------------------------------------------->
    <section>
-    <div class="text-center m-4">
-        <p style="font-size: 40px;color:lightslategrey">liste des depenses</p>
+    <div class=" m-4">
+        <p style="font-size: 30px;color:lightslategrey;margin-left:40px">liste des revenus</p>
         <div class="row text-center text-white "style="height: 30px;display:flex ;justify-content:center">
 
             <label class="col-4  border border-success bg-success " for="title">Titre</label>
