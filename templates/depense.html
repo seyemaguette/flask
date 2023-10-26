@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{url_for('static', filename='bootstrap-5.3.2/dist/css/bootstrap.css')}}">
+
+  <title></title>
+</head>
+<body>
+ 
+
+  <form class="container d-flex-inline w-50 h-100 mt-5  " method="POST" action="/depense">
+    <label class="text-center text-success pb-5">Ajouter une depense</label>
+    <label class="row w-25 text-success" for=""> Titre</label>
+    <input class="row  mb-4 w-100 " type="text" name="titre" />
+    <label class="row   w-25 text-success " for="">Montant</label>
+    <input class="row  mb-4 w-100 " type="text" name="montant" />
+    <input class="bg-success shadow  "  type="submit">
+  </form>
+  
+    <script src="{{url_for('static', filename='bootstrap-5.3.2/dist/js/bootstrap.js')}}"></script>
+       
+</body>
+</html>
+
+
+
